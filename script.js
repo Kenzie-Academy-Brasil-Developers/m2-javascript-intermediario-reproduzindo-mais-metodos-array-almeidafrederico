@@ -5,15 +5,20 @@ const arrayForEach = [10, 20, 30, 44, 55]; // array para iteração do método
 const arrayVazio = [];
 //nossa callback
 function callbackForEach(element) {
-  return arrayVazio.push(element * 2);
+  arrayVazio.push(element * 2);
+  return true
 }
 
 function forEach(array, callback) {
-  //sua lógica aqui
+  // array.forEach(callback);
+  for(let i in array){
+    callback(array[i]);
+  }
+  return true
 }
 
-// console.log(forEach(arrayForEach, callbackForEach));
-// console.log(arrayVazio);
+console.log(forEach(arrayForEach, callbackForEach));
+console.log(arrayVazio);
 
 //Método Find --------
 
